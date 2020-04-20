@@ -1,25 +1,16 @@
-//
-//  SIPKit.h
-//  SIPKit
-//
-//  Created by Wolfgang Baird on 4/20/20.
-//  Copyright © 2020 Wolfgang Baird. All rights reserved.
-//
+# SIPKit 
 
-// In this header, you should import all the public headers of your framework
-// using statements like #import <SIPKit/PublicHeader.h>
+SIPKit is an open-source framework to make it easy for your app to handle SIP AMFI and Library Validation on macOS. 
 
-@import AppKit;
-#import <Foundation/Foundation.h>
+[![Discord](https://discordapp.com/api/guilds/608740492561219617/widget.png?style=banner2)](https://discordapp.com/channels/608740492561219617/608740492640911378)
 
-//! Project version number for SIPKit.
-FOUNDATION_EXPORT double SIPKitVersionNumber;
+### Installation 📂
 
-//! Project version string for SIPKit.
-FOUNDATION_EXPORT const unsigned char SIPKitVersionString[];
+-
 
-@interface SIPKit : NSObject
+### Usage 📝
 
+```objectivec
 // AMFI controls
 
 /// Get rid of AMFI
@@ -79,5 +70,12 @@ FOUNDATION_EXPORT const unsigned char SIPKitVersionString[];
 + (Boolean)SIP_TASK_FOR_PID;
 /// 1 = filesystem flag enabled, 0 = disabled
 + (Boolean)SIP_Filesystem;
+```
 
-@end
+### System Requirements 🖥
+
+- SIPKit supports macOS 10.10 and above
+
+### Developement ❤️
+
+- [MacEnhance](https://github.com/macenhance) ([@MacEnhance](https://github.com/macenhance)) ([MacEnhance](https://www.macenhance.com/))

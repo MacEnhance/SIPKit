@@ -139,7 +139,7 @@ NSString *const MFAMFIWarningKey = @"MF_AMFIShowWarning";
     NSString *app = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
     if (app == nil) app = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
     if (app == nil) app = @"macOS Plugin Framework";
-    NSString *sipFile = @"amfi";
+    NSString *sipFile = @"eng_amfi";
     NSString *text = [NSString stringWithContentsOfURL:[[NSBundle bundleForClass:[self class]]
                                                         URLForResource:sipFile withExtension:@"txt"]
                                               encoding:NSUTF8StringEncoding
