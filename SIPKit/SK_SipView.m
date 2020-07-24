@@ -1,14 +1,13 @@
 //
-//  MFKSipView.m
-//  MacForgeKit
+//  SK_SipView.m
+//  SIPKit
 //
 //  Created by Wolfgang Baird on 8/11/19.
 //  Copyright © 2019 MacEnhance. All rights reserved.
 //
 
-#import "MFKSipView.h"
+#import "SK_SipView.h"
 #import "SIPKit.h"
-
 
 @implementation NoInteractPlayer
 
@@ -22,7 +21,7 @@
 
 @end
 
-@implementation MFKSipView
+@implementation SK_SipView
 
 //@synthesize confirm;
 
@@ -42,7 +41,7 @@
 }
 
 - (void)awakeFromNib {
-    //    [[self window] setBackgroundColor:[NSColor whiteColor]];
+//    [[self window] setBackgroundColor:[NSColor whiteColor]];
 //    [[self window] setMovableByWindowBackground:true];
 //    [[self window] setLevel:NSFloatingWindowLevel];
 //    [[self window] setTitle:@""];
@@ -66,10 +65,10 @@
     if (app == nil) app = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
     if (app == nil) app = @"macOS Plugin Framework";
     
-    NSString *sipFile = @"eng_sip";
-    if (NSProcessInfo.processInfo.operatingSystemVersion.minorVersion > 13) sipFile = @"eng_sip_mojave";
+    NSString *sipFile = @"eng_warning";
+    if (NSProcessInfo.processInfo.operatingSystemVersion.minorVersion > 13) sipFile = @"eng_warning";
     
-    NSString *text = [NSString stringWithContentsOfURL:[[NSBundle bundleForClass:[MFKSipView class]]
+    NSString *text = [NSString stringWithContentsOfURL:[[NSBundle bundleForClass:[SK_SipView class]]
                                                         URLForResource:sipFile withExtension:@"txt"]
                                               encoding:NSUTF8StringEncoding
                                                  error:&err];
@@ -85,7 +84,7 @@
     
     _avp = [[AVPlayer alloc] initWithPlayerItem: item];
     playerView.player = _avp;
-    [playerView setFrame:CGRectMake(50, 70, 500, 250)];
+    [playerView setFrame:CGRectMake(self.view.frame.size.width/2 - 250, 70, 500, 250)];
     
     //    playerView.showsPlaybackControls = YES;
     

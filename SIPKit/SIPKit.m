@@ -186,8 +186,6 @@ NSString *const MFAMFIWarningKey = @"MF_AMFIShowWarning";
     return result;
 }
 
-
-
 + (void)AMFI_NUKE_NOCHECK {
     AuthorizationRef authorizationRef;
     OSStatus status;

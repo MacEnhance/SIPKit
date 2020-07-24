@@ -10,7 +10,7 @@
 // using statements like #import <SIPKit/PublicHeader.h>
 
 @import AppKit;
-#import <Foundation/Foundation.h>
+#import "SK_SipView.h"
 
 //! Project version number for SIPKit.
 FOUNDATION_EXPORT double SIPKitVersionNumber;

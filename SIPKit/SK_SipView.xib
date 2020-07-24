@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17140" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17140"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,20 +18,41 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="633"/>
+            <rect key="frame" x="0.0" y="0.0" width="660" height="669"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7CF-iM-Ppa">
-                    <rect key="frame" x="18" y="310" width="564" height="303"/>
+                    <rect key="frame" x="18" y="327" width="624" height="322"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="Fsr-c9-fDi">
                         <font key="font" metaFont="menu" size="11"/>
+                        <mutableString key="title">New security features introduced in macOS prevent &lt;appname&gt; from functioning properly.
+&lt;appname&gt; has determined that System Integrity Protection is enabled on your system.
+In order get the full features of &lt;appname&gt; you must partially disable System Integrity Protection.
+
+Follow the instructions below to partially disable System Integrity Protection:
+
+1 : Restart your computer
+2 : Boot to recovery partition by holding (Command [⌘] +  R)
+3 : Open terminal from the menubar
+4 : Enter this command:
+
+csrutil enable --without fs --without nvram --without debug
+
+5 : Restart your computer
+
+You may also be required to disable Library Validation
+
+1 : Open terminal and enter the command: 
+sudo defaults write /Library/Preferences/com.apple.security.libraryvalidation.plist DisableLibraryValidation -bool true 
+2 : Restart your computer
+</mutableString>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zzj-jM-JhH">
-                    <rect key="frame" x="424" y="13" width="81" height="32"/>
+                    <rect key="frame" x="485" y="13" width="81" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Evi-2w-IQ0">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -42,7 +63,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="REc-ya-NEL">
-                    <rect key="frame" x="505" y="13" width="81" height="32"/>
+                    <rect key="frame" x="566" y="13" width="81" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Confirm" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Iqc-s0-TqZ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -53,7 +74,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EE6-3N-R6J">
-                    <rect key="frame" x="343" y="13" width="81" height="32"/>
+                    <rect key="frame" x="404" y="13" width="81" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Reboot" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LWr-VN-fca">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -64,7 +85,7 @@
                     </connections>
                 </button>
             </subviews>
-            <point key="canvasLocation" x="242" y="228.5"/>
+            <point key="canvasLocation" x="-112" y="248.5"/>
         </customView>
     </objects>
 </document>

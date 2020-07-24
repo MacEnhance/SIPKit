@@ -13,10 +13,10 @@
 		F325E0A0244E5961006BB63E /* STPrivilegedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F325E09D244E5961006BB63E /* STPrivilegedTask.m */; };
 		F325E0A1244E5961006BB63E /* LICENSE_STPrivilegedTask in Resources */ = {isa = PBXBuildFile; fileRef = F325E09E244E5961006BB63E /* LICENSE_STPrivilegedTask */; };
 		F325E0A3244E596B006BB63E /* sipvid.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F325E0A2244E596A006BB63E /* sipvid.mp4 */; };
-		F325E0A9244E5975006BB63E /* MFKSipView.m in Sources */ = {isa = PBXBuildFile; fileRef = F325E0A4244E5974006BB63E /* MFKSipView.m */; };
+		F325E0A9244E5975006BB63E /* SK_SipView.m in Sources */ = {isa = PBXBuildFile; fileRef = F325E0A4244E5974006BB63E /* SK_SipView.m */; };
 		F325E0AB244E5975006BB63E /* eng_warning.txt in Resources */ = {isa = PBXBuildFile; fileRef = F325E0A6244E5974006BB63E /* eng_warning.txt */; };
-		F325E0AC244E5975006BB63E /* MFKSipView.h in Headers */ = {isa = PBXBuildFile; fileRef = F325E0A7244E5975006BB63E /* MFKSipView.h */; };
-		F325E0AD244E5975006BB63E /* MFKSipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F325E0A8244E5975006BB63E /* MFKSipView.xib */; };
+		F325E0AC244E5975006BB63E /* SK_SipView.h in Headers */ = {isa = PBXBuildFile; fileRef = F325E0A7244E5975006BB63E /* SK_SipView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F325E0AD244E5975006BB63E /* SK_SipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F325E0A8244E5975006BB63E /* SK_SipView.xib */; };
 		F325E0B6244E6003006BB63E /* eng_amfi.txt in Resources */ = {isa = PBXBuildFile; fileRef = F325E0B5244E6003006BB63E /* eng_amfi.txt */; };
 /* End PBXBuildFile section */
 
@@ -29,10 +29,10 @@
 		F325E09D244E5961006BB63E /* STPrivilegedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPrivilegedTask.m; sourceTree = "<group>"; };
 		F325E09E244E5961006BB63E /* LICENSE_STPrivilegedTask */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_STPrivilegedTask; sourceTree = "<group>"; };
 		F325E0A2244E596A006BB63E /* sipvid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sipvid.mp4; sourceTree = "<group>"; };
-		F325E0A4244E5974006BB63E /* MFKSipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFKSipView.m; sourceTree = "<group>"; };
+		F325E0A4244E5974006BB63E /* SK_SipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SK_SipView.m; sourceTree = "<group>"; };
 		F325E0A6244E5974006BB63E /* eng_warning.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng_warning.txt; sourceTree = "<group>"; };
-		F325E0A7244E5975006BB63E /* MFKSipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFKSipView.h; sourceTree = "<group>"; };
-		F325E0A8244E5975006BB63E /* MFKSipView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MFKSipView.xib; sourceTree = "<group>"; };
+		F325E0A7244E5975006BB63E /* SK_SipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SK_SipView.h; sourceTree = "<group>"; };
+		F325E0A8244E5975006BB63E /* SK_SipView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SK_SipView.xib; sourceTree = "<group>"; };
 		F325E0B5244E6003006BB63E /* eng_amfi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng_amfi.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,9 +67,9 @@
 			isa = PBXGroup;
 			children = (
 				F325E0AE244E598E006BB63E /* STPrivilegedTask */,
-				F325E0A7244E5975006BB63E /* MFKSipView.h */,
-				F325E0A4244E5974006BB63E /* MFKSipView.m */,
-				F325E0A8244E5975006BB63E /* MFKSipView.xib */,
+				F325E0A7244E5975006BB63E /* SK_SipView.h */,
+				F325E0A4244E5974006BB63E /* SK_SipView.m */,
+				F325E0A8244E5975006BB63E /* SK_SipView.xib */,
 				F325E0B5244E6003006BB63E /* eng_amfi.txt */,
 				F325E0A6244E5974006BB63E /* eng_warning.txt */,
 				F325E0A2244E596A006BB63E /* sipvid.mp4 */,
@@ -98,8 +98,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F325E082244E5779006BB63E /* SIPKit.h in Headers */,
+				F325E0AC244E5975006BB63E /* SK_SipView.h in Headers */,
 				F325E09F244E5961006BB63E /* STPrivilegedTask.h in Headers */,
-				F325E0AC244E5975006BB63E /* MFKSipView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +163,7 @@
 			files = (
 				F325E0A3244E596B006BB63E /* sipvid.mp4 in Resources */,
 				F325E0A1244E5961006BB63E /* LICENSE_STPrivilegedTask in Resources */,
-				F325E0AD244E5975006BB63E /* MFKSipView.xib in Resources */,
+				F325E0AD244E5975006BB63E /* SK_SipView.xib in Resources */,
 				F325E0AB244E5975006BB63E /* eng_warning.txt in Resources */,
 				F325E0B6244E6003006BB63E /* eng_amfi.txt in Resources */,
 			);
@@ -178,7 +178,7 @@
 			files = (
 				F325E0A0244E5961006BB63E /* STPrivilegedTask.m in Sources */,
 				F325E089244E5843006BB63E /* SIPKit.m in Sources */,
-				F325E0A9244E5975006BB63E /* MFKSipView.m in Sources */,
+				F325E0A9244E5975006BB63E /* SK_SipView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

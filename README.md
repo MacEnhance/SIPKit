@@ -1,6 +1,6 @@
 # SIPKit 
 
-SIPKit is an open-source framework to make it easy for your app to handle SIP AMFI and Library Validation on macOS. 
+SIPKit is an open-source framework to make it easy for your app to handle SIP, AMFI, and Library Validation on macOS. 
 
 [![Discord](https://discordapp.com/api/guilds/608740492561219617/widget.png?style=banner2)](https://discordapp.com/channels/608740492561219617/608740492640911378)
 
