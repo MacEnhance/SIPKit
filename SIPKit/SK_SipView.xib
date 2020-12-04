@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17140" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17140"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,31 +22,28 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7CF-iM-Ppa">
-                    <rect key="frame" x="18" y="327" width="624" height="322"/>
+                    <rect key="frame" x="18" y="379" width="624" height="270"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="Fsr-c9-fDi">
                         <font key="font" metaFont="menu" size="11"/>
                         <mutableString key="title">New security features introduced in macOS prevent &lt;appname&gt; from functioning properly.
 &lt;appname&gt; has determined that System Integrity Protection is enabled on your system.
-In order get the full features of &lt;appname&gt; you must partially disable System Integrity Protection.
+In order get the full features of &lt;appname&gt; you must disable SIP.
 
-Follow the instructions below to partially disable System Integrity Protection:
+Follow the instructions below to partially disable SIP:
 
-1 : Restart your computer
-2 : Boot to recovery partition by holding (Command [⌘] +  R)
-3 : Open terminal from the menubar
-4 : Enter this command:
+1 : Open terminal and enter the command:
 
-csrutil enable --without fs --without nvram --without debug
+sudo defaults write /Library/Preferences/com.apple.security.libraryvalidation.plist DisableLibraryValidation -bool true
 
-5 : Restart your computer
-
-You may also be required to disable Library Validation
-
-1 : Open terminal and enter the command: 
-sudo defaults write /Library/Preferences/com.apple.security.libraryvalidation.plist DisableLibraryValidation -bool true 
 2 : Restart your computer
-</mutableString>
+3 : Boot to recovery partition by holding (Command [⌘] +  R)
+4 : Open terminal from the menubar
+5 : Enter this command:
+
+csrutil disable
+
+5 : Restart your computer</mutableString>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

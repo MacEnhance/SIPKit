@@ -20,6 +20,10 @@ FOUNDATION_EXPORT const unsigned char SIPKitVersionString[];
 
 @interface SIPKit : NSObject
 
+@property AuthorizationRef authRef;
+
++ (SIPKit*)kit;
+
 // AMFI controls
 
 /// Get rid of AMFI
@@ -66,9 +70,19 @@ FOUNDATION_EXPORT const unsigned char SIPKitVersionString[];
 
 
 
+// Recovery reboot
+
+// Reboot to recovery mode
++ (void)RebootToRecovery;
+
+
 
 // System Integrity Protection
 
+// Start the SIP disable process
++ (void)SIP_disable;
+// Re-enable SIP
++ (void)SIP_enable;
 /// 1 = enabled, 0 = disabled
 + (Boolean)SIP_enabled;
 /// 1 = has flags required for code injection, 0 = flags missing

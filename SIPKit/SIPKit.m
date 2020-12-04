@@ -56,6 +56,14 @@ bool _csr_check(int aMask, bool aFlipflag) {
 
 NSString *const MFAMFIWarningKey = @"MF_AMFIShowWarning";
 
++ (SIPKit*)kit {
+    static SIPKit* share = nil;
+    if (share == nil) {
+        share = SIPKit.new;
+    }
+    return share;
+}
+
 + (Boolean)runSTPrivilegedTask:(NSString*)launchPath :(NSArray*)args {
     STPrivilegedTask *privilegedTask = [[STPrivilegedTask alloc] init];
     NSMutableArray *components = [args mutableCopy];
@@ -92,6 +100,52 @@ NSString *const MFAMFIWarningKey = @"MF_AMFIShowWarning";
 
 
 /* ------------------ SIP ------------------ */
+
++ (void)RebootToRecovery {
+    [SIPKit getAuth];
+    [STPrivilegedTask launchedPrivilegedTaskWithLaunchPath:@"/usr/sbin/nvram"
+                                                 arguments:@[@"internet-recovery-mode=RecoveryModeDisk"]
+                                          currentDirectory:[[NSBundle mainBundle] resourcePath]
+                                             authorization:SIPKit.kit.authRef];
+}
+
++ (void)SIP_enable {
+    [SIPKit getAuth];
+    [STPrivilegedTask launchedPrivilegedTaskWithLaunchPath:@"/usr/bin/csrutil"
+                                                 arguments:@[@"clear"]
+                                          currentDirectory:[[NSBundle mainBundle] resourcePath]
+                                             authorization:SIPKit.kit.authRef];
+    
+    [STPrivilegedTask launchedPrivilegedTaskWithLaunchPath:@"/sbin/reboot"
+                                                 arguments:@[]
+                                          currentDirectory:[[NSBundle mainBundle] resourcePath]
+                                             authorization:SIPKit.kit.authRef];
+    
+}
+
++ (void)SIP_disable {
+    [SIPKit getAuth];
+    [STPrivilegedTask launchedPrivilegedTaskWithLaunchPath:@"/usr/sbin/nvram"
+                                                 arguments:@[@"internet-recovery-mode=RecoveryModeDisk"]
+                                          currentDirectory:[[NSBundle mainBundle] resourcePath]
+                                             authorization:SIPKit.kit.authRef];
+    
+    [STPrivilegedTask launchedPrivilegedTaskWithLaunchPath:@"/usr/sbin/nvram"
+                                                 arguments:@[@"internet-recovery-mode=RecoveryModeDisk"]
+                                          currentDirectory:[[NSBundle mainBundle] resourcePath]
+                                             authorization:SIPKit.kit.authRef];
+    
+    [STPrivilegedTask launchedPrivilegedTaskWithLaunchPath:@"/usr/bin/defaults"
+                                                 arguments:@[@"write", @"/Library/Preferences/com.apple.security.libraryvalidation.plist", @"DisableLibraryValidation", @"-bool", @"true"]
+                                          currentDirectory:[[NSBundle mainBundle] resourcePath]
+                                             authorization:SIPKit.kit.authRef];
+    
+    [STPrivilegedTask launchedPrivilegedTaskWithLaunchPath:@"/sbin/reboot"
+                                                 arguments:@[]
+                                          currentDirectory:[[NSBundle mainBundle] resourcePath]
+                                             authorization:SIPKit.kit.authRef];
+    
+}
 
 + (Boolean)SIP_enabled {
     csr_get_active_config(&config);
@@ -186,38 +240,45 @@ NSString *const MFAMFIWarningKey = @"MF_AMFIShowWarning";
     return result;
 }
 
++ (void)getAuth {
+    AuthorizationItem authItem        = { kSMRightBlessPrivilegedHelper, 0, NULL, 0 };
+    AuthorizationRights authRights    = { 1, &authItem };
+    AuthorizationFlags flags          = kAuthorizationFlagDefaults | kAuthorizationFlagInteractionAllowed |
+                                        kAuthorizationFlagPreAuthorize | kAuthorizationFlagExtendRights;
+    OSStatus status = AuthorizationCopyRights(SIPKit.kit.authRef, &authRights, kAuthorizationEmptyEnvironment, flags, nil);
+}
+
 + (void)AMFI_NUKE_NOCHECK {
-    AuthorizationRef authorizationRef;
-    OSStatus status;
-    status = AuthorizationCreate(NULL, kAuthorizationEmptyEnvironment, kAuthorizationFlagDefaults, &authorizationRef);
+    [SIPKit getAuth];
     
     [STPrivilegedTask launchedPrivilegedTaskWithLaunchPath:@"/usr/sbin/nvram"
                                                  arguments:@[@"-d", @"boot-args"]
                                           currentDirectory:[[NSBundle mainBundle] resourcePath]
-                                             authorization:authorizationRef];
+                                             authorization:SIPKit.kit.authRef];
     
     [STPrivilegedTask launchedPrivilegedTaskWithLaunchPath:@"/usr/bin/defaults"
                                                  arguments:@[@"write", @"/Library/Preferences/com.apple.security.libraryvalidation.plist", @"DisableLibraryValidation", @"-bool", @"true"]
                                           currentDirectory:[[NSBundle mainBundle] resourcePath]
-                                             authorization:authorizationRef];
+                                             authorization:SIPKit.kit.authRef];
 }
 
 + (void)AMFI_NUKE {
     NSString *result = [SIPKit runScript:@"nvram boot-args 2>&1"];
     if ([result containsString:@"amfi_get_out_of_my_way"]) {
-        AuthorizationRef authorizationRef;
-        OSStatus status;
-        status = AuthorizationCreate(NULL, kAuthorizationEmptyEnvironment, kAuthorizationFlagDefaults, &authorizationRef);
+//        AuthorizationRef authorizationRef;
+//        OSStatus status;
+//        status = AuthorizationCreate(NULL, kAuthorizationEmptyEnvironment, kAuthorizationFlagDefaults, &authorizationRef);
+        [SIPKit getAuth];
         
         [STPrivilegedTask launchedPrivilegedTaskWithLaunchPath:@"/usr/sbin/nvram"
                                                      arguments:@[@"-d", @"boot-args"]
                                               currentDirectory:[[NSBundle mainBundle] resourcePath]
-                                                 authorization:authorizationRef];
+                                                 authorization:SIPKit.kit.authRef];
         
         [STPrivilegedTask launchedPrivilegedTaskWithLaunchPath:@"/usr/bin/defaults"
                                                      arguments:@[@"write", @"/Library/Preferences/com.apple.security.libraryvalidation.plist", @"DisableLibraryValidation", @"-bool", @"true"]
                                               currentDirectory:[[NSBundle mainBundle] resourcePath]
-                                                 authorization:authorizationRef];
+                                                 authorization:SIPKit.kit.authRef];
     }
 }
 
