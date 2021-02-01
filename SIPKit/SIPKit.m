@@ -230,11 +230,15 @@ NSString *const MFAMFIWarningKey = @"MF_AMFIShowWarning";
     text = [text stringByReplacingOccurrencesOfString:@"<appname>" withString:app];
     
     int viewHeight = 0;
-    int origin = 0;
+    int originY = 0;
+    int originX = 0;
     NSView *customView = [NSView.alloc initWithFrame:NSMakeRect(0, 0, 400, 0)];
 
+    if (NSProcessInfo.processInfo.operatingSystemVersion.majorVersion >= 11)
+        originX = 20;
+    
     if (video) {
-        AVPlayerView *avpv = [AVPlayerView.alloc initWithFrame:NSMakeRect(20, origin, 360, 240)];
+        AVPlayerView *avpv = [AVPlayerView.alloc initWithFrame:NSMakeRect(originX, originY, 360, 240)];
         [avpv setControlsStyle:AVPlayerViewControlsStyleMinimal];
         NSURL* url = [[NSBundle bundleForClass:[SIPKit class]] URLForResource:@"sipvid" withExtension:@"mp4"];
         AVURLAsset *asset = [AVURLAsset assetWithURL: url];
@@ -243,19 +247,19 @@ NSString *const MFAMFIWarningKey = @"MF_AMFIShowWarning";
         avpv.player = avp;
         [avp play];
         viewHeight = 240;
-        origin += 240;
+        originY += 240;
         [customView addSubview:avpv];
     }
     
     NSTextField *warning = NSTextField.new;//[NSTextField.alloc initWithFrame:NSMakeRect(18, origin, 364, 1000)];
     [warning setStringValue:text];
     CGFloat minHeight = [((NSTextFieldCell *)[warning cell]) cellSizeForBounds:NSMakeRect(0, 0, 364, FLT_MAX)].height;
-    [warning setFrame:NSMakeRect(18, origin, 364, minHeight)];
+    [warning setFrame:NSMakeRect(originX, originY, 364, minHeight)];
     [warning setSelectable:false];
     [warning setDrawsBackground:false];
     [warning setBordered:false];
     viewHeight += minHeight;
-    origin += minHeight;
+    originY += minHeight;
     [customView addSubview:warning];
  
     [customView setFrame:NSMakeRect(0, 0, 400, viewHeight)];
@@ -274,10 +278,11 @@ NSString *const MFAMFIWarningKey = @"MF_AMFIShowWarning";
     if ([SIPKit SIP_enabled]) {
         windowType = @"eng";
         showVideo = true;
-    } else if ([SIPKit ABI_isEnabled]) {
-        windowType = @"eng_abi";
-    } else if ([SIPKit AMFI_isEnabled]) {
+    } else if (![SIPKit AMFI_isEnabled]) {
         windowType = @"eng_amfi";
+    } else if ([SIPKit isARM]) {
+        if ([SIPKit ABI_isEnabled])
+            windowType = @"eng_abi";
     }
     
     if (windowType.length > 0) {
@@ -296,10 +301,11 @@ NSString *const MFAMFIWarningKey = @"MF_AMFIShowWarning";
     if ([SIPKit SIP_enabled]) {
         windowType = @"eng";
         showVideo = true;
-    } else if ([SIPKit ABI_isEnabled]) {
-        windowType = @"eng_abi";
     } else if (![SIPKit AMFI_isEnabled]) {
         windowType = @"eng_amfi";
+    } else if ([SIPKit isARM]) {
+        if ([SIPKit ABI_isEnabled])
+            windowType = @"eng_abi";
     }
     
     if (windowType.length > 0) {
@@ -610,10 +616,7 @@ NSString *const MFAMFIWarningKey = @"MF_AMFIShowWarning";
 }
 
 + (Boolean)AMFI_isEnabled {
-    Boolean enabled = true;
-    NSString *result = [SIPKit runScript:@"nvram boot-args 2>&1"];
-    if ([result rangeOfString:@"amfi_get_out_of_my_way=1"].length > 0) enabled = false;
-    return enabled;
+    return ![SIPKit NVRAM_arg_present:@"amfi_get_out_of_my_way=1"];
 }
 
 + (Boolean)AMFI_amfi_allow_any_signature_toggle {

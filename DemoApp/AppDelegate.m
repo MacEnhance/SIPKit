@@ -18,7 +18,10 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     
-    [SIPKit ABI_setEnabled:false];
+//    [SIPKit ABI_setEnabled:false];
+    
+    [SIPKit showMasterWaringinWindow:_window];
+    
 //    [SIPKit ABI_showWaringinWindow:_window];
 //    [SIPKit SIP_showWaringinWindow:_window];
 //    [SIPKit AMFI_showWaringinWindow:_window];
