@@ -13,12 +13,40 @@
 		F325E0A0244E5961006BB63E /* STPrivilegedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F325E09D244E5961006BB63E /* STPrivilegedTask.m */; };
 		F325E0A1244E5961006BB63E /* LICENSE_STPrivilegedTask in Resources */ = {isa = PBXBuildFile; fileRef = F325E09E244E5961006BB63E /* LICENSE_STPrivilegedTask */; };
 		F325E0A3244E596B006BB63E /* sipvid.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F325E0A2244E596A006BB63E /* sipvid.mp4 */; };
-		F325E0A9244E5975006BB63E /* SK_SipView.m in Sources */ = {isa = PBXBuildFile; fileRef = F325E0A4244E5974006BB63E /* SK_SipView.m */; };
-		F325E0AB244E5975006BB63E /* eng_warning.txt in Resources */ = {isa = PBXBuildFile; fileRef = F325E0A6244E5974006BB63E /* eng_warning.txt */; };
-		F325E0AC244E5975006BB63E /* SK_SipView.h in Headers */ = {isa = PBXBuildFile; fileRef = F325E0A7244E5975006BB63E /* SK_SipView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F325E0AD244E5975006BB63E /* SK_SipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F325E0A8244E5975006BB63E /* SK_SipView.xib */; };
-		F325E0B6244E6003006BB63E /* eng_amfi.txt in Resources */ = {isa = PBXBuildFile; fileRef = F325E0B5244E6003006BB63E /* eng_amfi.txt */; };
+		F325E0AB244E5975006BB63E /* eng in Resources */ = {isa = PBXBuildFile; fileRef = F325E0A6244E5974006BB63E /* eng */; };
+		F325E0B6244E6003006BB63E /* eng_amfi in Resources */ = {isa = PBXBuildFile; fileRef = F325E0B5244E6003006BB63E /* eng_amfi */; };
+		FB5D65BC25C753FD00CDD5BC /* eng_abi in Resources */ = {isa = PBXBuildFile; fileRef = FB5D65BB25C753FD00CDD5BC /* eng_abi */; };
+		FB8545EA25C62AD80092C8DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8545E925C62AD80092C8DF /* AppDelegate.m */; };
+		FB8545EC25C62AD90092C8DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8545EB25C62AD90092C8DF /* Assets.xcassets */; };
+		FB8545EF25C62AD90092C8DF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8545ED25C62AD90092C8DF /* MainMenu.xib */; };
+		FB8545F225C62AD90092C8DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8545F125C62AD90092C8DF /* main.m */; };
+		FB8545F925C62AE30092C8DF /* SIPKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F325E07D244E5779006BB63E /* SIPKit.framework */; };
+		FB8545FA25C62AE30092C8DF /* SIPKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F325E07D244E5779006BB63E /* SIPKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FB8545FB25C62AE30092C8DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F325E074244E5779006BB63E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F325E07C244E5779006BB63E;
+			remoteInfo = SIPKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FB8545FD25C62AE30092C8DF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FB8545FA25C62AE30092C8DF /* SIPKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F325E07D244E5779006BB63E /* SIPKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SIPKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,11 +57,17 @@
 		F325E09D244E5961006BB63E /* STPrivilegedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPrivilegedTask.m; sourceTree = "<group>"; };
 		F325E09E244E5961006BB63E /* LICENSE_STPrivilegedTask */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_STPrivilegedTask; sourceTree = "<group>"; };
 		F325E0A2244E596A006BB63E /* sipvid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sipvid.mp4; sourceTree = "<group>"; };
-		F325E0A4244E5974006BB63E /* SK_SipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SK_SipView.m; sourceTree = "<group>"; };
-		F325E0A6244E5974006BB63E /* eng_warning.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng_warning.txt; sourceTree = "<group>"; };
-		F325E0A7244E5975006BB63E /* SK_SipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SK_SipView.h; sourceTree = "<group>"; };
-		F325E0A8244E5975006BB63E /* SK_SipView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SK_SipView.xib; sourceTree = "<group>"; };
-		F325E0B5244E6003006BB63E /* eng_amfi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng_amfi.txt; sourceTree = "<group>"; };
+		F325E0A6244E5974006BB63E /* eng */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng; sourceTree = "<group>"; };
+		F325E0B5244E6003006BB63E /* eng_amfi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng_amfi; sourceTree = "<group>"; };
+		FB5D65BB25C753FD00CDD5BC /* eng_abi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng_abi; sourceTree = "<group>"; };
+		FB8545E625C62AD80092C8DF /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB8545E825C62AD80092C8DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FB8545E925C62AD80092C8DF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FB8545EB25C62AD90092C8DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB8545EE25C62AD90092C8DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FB8545F025C62AD90092C8DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB8545F125C62AD90092C8DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FB8545F325C62AD90092C8DF /* DemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +78,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FB8545E325C62AD80092C8DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB8545F925C62AE30092C8DF /* SIPKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -51,7 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				F325E07F244E5779006BB63E /* SIPKit */,
+				FB8545E725C62AD80092C8DF /* DemoApp */,
 				F325E07E244E5779006BB63E /* Products */,
+				FB8545DA25C6272B0092C8DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				F325E07D244E5779006BB63E /* SIPKit.framework */,
+				FB8545E625C62AD80092C8DF /* DemoApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,11 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				F325E0AE244E598E006BB63E /* STPrivilegedTask */,
-				F325E0A7244E5975006BB63E /* SK_SipView.h */,
-				F325E0A4244E5974006BB63E /* SK_SipView.m */,
-				F325E0A8244E5975006BB63E /* SK_SipView.xib */,
-				F325E0B5244E6003006BB63E /* eng_amfi.txt */,
-				F325E0A6244E5974006BB63E /* eng_warning.txt */,
+				F325E0B5244E6003006BB63E /* eng_amfi */,
+				FB5D65BB25C753FD00CDD5BC /* eng_abi */,
+				F325E0A6244E5974006BB63E /* eng */,
 				F325E0A2244E596A006BB63E /* sipvid.mp4 */,
 				F325E080244E5779006BB63E /* SIPKit.h */,
 				F325E088244E5843006BB63E /* SIPKit.m */,
@@ -90,6 +133,27 @@
 			path = STPrivilegedTask;
 			sourceTree = "<group>";
 		};
+		FB8545DA25C6272B0092C8DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB8545E725C62AD80092C8DF /* DemoApp */ = {
+			isa = PBXGroup;
+			children = (
+				FB8545E825C62AD80092C8DF /* AppDelegate.h */,
+				FB8545E925C62AD80092C8DF /* AppDelegate.m */,
+				FB8545EB25C62AD90092C8DF /* Assets.xcassets */,
+				FB8545ED25C62AD90092C8DF /* MainMenu.xib */,
+				FB8545F025C62AD90092C8DF /* Info.plist */,
+				FB8545F125C62AD90092C8DF /* main.m */,
+				FB8545F325C62AD90092C8DF /* DemoApp.entitlements */,
+			);
+			path = DemoApp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -98,7 +162,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F325E082244E5779006BB63E /* SIPKit.h in Headers */,
-				F325E0AC244E5975006BB63E /* SK_SipView.h in Headers */,
 				F325E09F244E5961006BB63E /* STPrivilegedTask.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +187,25 @@
 			productReference = F325E07D244E5779006BB63E /* SIPKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		FB8545E525C62AD80092C8DF /* DemoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB8545F425C62AD90092C8DF /* Build configuration list for PBXNativeTarget "DemoApp" */;
+			buildPhases = (
+				FB8545E225C62AD80092C8DF /* Sources */,
+				FB8545E325C62AD80092C8DF /* Frameworks */,
+				FB8545E425C62AD80092C8DF /* Resources */,
+				FB8545FD25C62AE30092C8DF /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB8545FC25C62AE30092C8DF /* PBXTargetDependency */,
+			);
+			name = DemoApp;
+			productName = DemoApp;
+			productReference = FB8545E625C62AD80092C8DF /* DemoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -135,6 +217,9 @@
 				TargetAttributes = {
 					F325E07C244E5779006BB63E = {
 						CreatedOnToolsVersion = 11.4.1;
+					};
+					FB8545E525C62AD80092C8DF = {
+						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
@@ -152,6 +237,7 @@
 			projectRoot = "";
 			targets = (
 				F325E07C244E5779006BB63E /* SIPKit */,
+				FB8545E525C62AD80092C8DF /* DemoApp */,
 			);
 		};
 /* End PBXProject section */
@@ -163,9 +249,18 @@
 			files = (
 				F325E0A3244E596B006BB63E /* sipvid.mp4 in Resources */,
 				F325E0A1244E5961006BB63E /* LICENSE_STPrivilegedTask in Resources */,
-				F325E0AD244E5975006BB63E /* SK_SipView.xib in Resources */,
-				F325E0AB244E5975006BB63E /* eng_warning.txt in Resources */,
-				F325E0B6244E6003006BB63E /* eng_amfi.txt in Resources */,
+				F325E0AB244E5975006BB63E /* eng in Resources */,
+				F325E0B6244E6003006BB63E /* eng_amfi in Resources */,
+				FB5D65BC25C753FD00CDD5BC /* eng_abi in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB8545E425C62AD80092C8DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB8545EC25C62AD90092C8DF /* Assets.xcassets in Resources */,
+				FB8545EF25C62AD90092C8DF /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,11 +273,38 @@
 			files = (
 				F325E0A0244E5961006BB63E /* STPrivilegedTask.m in Sources */,
 				F325E089244E5843006BB63E /* SIPKit.m in Sources */,
-				F325E0A9244E5975006BB63E /* SK_SipView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB8545E225C62AD80092C8DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB8545F225C62AD90092C8DF /* main.m in Sources */,
+				FB8545EA25C62AD80092C8DF /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB8545FC25C62AE30092C8DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F325E07C244E5779006BB63E /* SIPKit */;
+			targetProxy = FB8545FB25C62AE30092C8DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FB8545ED25C62AD90092C8DF /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB8545EE25C62AD90092C8DF /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F325E083244E5779006BB63E /* Debug */ = {
@@ -237,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -293,7 +415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -320,7 +442,9 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MARKETING_VERSION = 0.2.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.macenhance.SIPKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -345,10 +469,54 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MARKETING_VERSION = 0.2.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.macenhance.SIPKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FB8545F525C62AD90092C8DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DemoApp/DemoApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = EX596BNL45;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = DemoApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.macenhance.DemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FB8545F625C62AD90092C8DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DemoApp/DemoApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = EX596BNL45;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = DemoApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.macenhance.DemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -369,6 +537,15 @@
 			buildConfigurations = (
 				F325E086244E5779006BB63E /* Debug */,
 				F325E087244E5779006BB63E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB8545F425C62AD90092C8DF /* Build configuration list for PBXNativeTarget "DemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB8545F525C62AD90092C8DF /* Debug */,
+				FB8545F625C62AD90092C8DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
